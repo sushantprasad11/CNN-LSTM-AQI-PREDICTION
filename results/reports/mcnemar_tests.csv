@@ -1,0 +1,4 @@
+model_1,model_2,"b (M1 right, M2 wrong)","c (M1 wrong, M2 right)",chi2_statistic,p_value,significant_at_0.05
+CNN,LSTM,778,527,47.8927,0.0,True
+CNN,Hybrid CNN-LSTM,500,752,50.3203,0.0,True
+LSTM,Hybrid CNN-LSTM,468,971,175.1244,0.0,True

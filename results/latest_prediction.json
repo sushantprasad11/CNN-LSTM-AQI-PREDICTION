@@ -1,0 +1,46 @@
+{
+  "type": "single_datetime",
+  "command": "Dashboard Run: Predicted for 2026-11-27 23:00",
+  "updated_at": "2026-11-25 23:18:09",
+  "timestamp_iso": "2026-11-25T23:18:09.904746",
+  "data": {
+    "datetime": "2026-11-27 23:00:00",
+    "mode": "FORECAST",
+    "predicted_category": "Very Poor",
+    "predicted_code": 4,
+    "confidence": 99.75084066390991,
+    "probabilities": {
+      "Good": 1.5673412789851682e-08,
+      "Satisfactory": 1.405144018917781e-07,
+      "Moderate": 0.00023787842656020075,
+      "Poor": 0.0021419781260192394,
+      "Very Poor": 0.9975084066390991,
+      "Severe": 0.00011157571861986071
+    },
+    "probabilities_percent": {
+      "Good": 0.0,
+      "Satisfactory": 0.0,
+      "Moderate": 0.02,
+      "Poor": 0.21,
+      "Very Poor": 99.75,
+      "Severe": 0.01
+    },
+    "risk_info": {
+      "risk_level": "Very High",
+      "risk_score": 5,
+      "color": "#660099",
+      "impact": "Health alert: everyone may experience more serious health effects.",
+      "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+    }
+  },
+  "summary": {
+    "title": "AQI for 2026-11-27 23:00:00 (FORECAST)",
+    "dominant_category": "Very Poor",
+    "dominant_code": 4,
+    "avg_confidence": 99.8,
+    "target_datetime": "2026-11-27 23:00:00",
+    "mode": "FORECAST",
+    "risk_level": "Very High",
+    "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+  }
+}

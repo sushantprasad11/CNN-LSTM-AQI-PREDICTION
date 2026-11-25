@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+requests
+python-dotenv
+pyyaml
+joblib
+scipy
+flask
+tensorflow
+keras
+tqdm

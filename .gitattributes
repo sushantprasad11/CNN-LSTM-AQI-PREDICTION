@@ -1,0 +1,33 @@
+# Set default behavior to automatically handle line endings
+* text=auto eol=lf
+
+# Explicitly declare text files you want to always be normalized and converted
+*.py text diff=python eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.csv text eol=lf
+
+# Windows-specific scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Jupyter Notebooks
+*.ipynb text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.docx binary
+*.joblib binary
+*.npz binary
+*.keras binary
+*.h5 binary

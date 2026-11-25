@@ -1,0 +1,12 @@
+{
+  "alert_precision": 0.9366889500589854,
+  "alert_recall": 0.8750918442321822,
+  "alert_f1_score": 0.9048433048433049,
+  "total_true_alerts": 2722,
+  "total_pred_alerts": 2543,
+  "total_samples": 8941,
+  "true_positives": 2382,
+  "false_positives": 161,
+  "false_negatives": 340,
+  "true_negatives": 6058
+}

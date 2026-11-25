@@ -1,0 +1,11 @@
+In Powershell 
+
+cd D:\AQI-Prediction-CNN-LSTM   //reach to project folder path
+
+
+python app/app.py  //start dashboard
+
+
+python predict_any_datetime.py "2026-11-16 14:00"   // to predict the aqi of given date and time
+
+

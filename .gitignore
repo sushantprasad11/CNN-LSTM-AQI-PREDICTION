@@ -1,0 +1,56 @@
+# Environment / Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Python Caches & Compiled Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook Caches
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# IDE & Editor Configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Framework Caches & Temporary Files
+*.log
+*.tmp
+.keras/
+.matplotlib/
+
+# Security & Private Keys
+*.key
+*.pem
+*.cert
+
+Project Execution and Understanding/X_test.csv
+Project Execution and Understanding/X_train.csv

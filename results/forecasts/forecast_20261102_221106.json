@@ -1,0 +1,2240 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-02 22:10 IST",
+    "location": "Delhi, India",
+    "coordinates": {
+      "lat": 28.6139,
+      "lon": 77.209
+    },
+    "forecast_hours": 72,
+    "models_used": [
+      "cnn",
+      "lstm",
+      "cnn_lstm"
+    ],
+    "ensemble_weights": {
+      "cnn": 0.2,
+      "lstm": 0.25,
+      "cnn_lstm": 0.55
+    },
+    "total_predictions": 72
+  },
+  "hourly_predictions": [
+    {
+      "datetime": "2026-11-02 23:00:00",
+      "hour_offset": 1,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 91.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.5468444303223805e-07,
+        "Satisfactory": 1.338698530162219e-05,
+        "Moderate": 0.023754926398396492,
+        "Poor": 0.9109936356544495,
+        "Very Poor": 0.06523501127958298,
+        "Severe": 2.896157184295589e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 00:00:00",
+      "hour_offset": 2,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 93.4,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 9.836738712465376e-08,
+        "Satisfactory": 8.38890719023766e-06,
+        "Moderate": 0.02665736712515354,
+        "Poor": 0.9344950914382935,
+        "Very Poor": 0.03883688524365425,
+        "Severe": 2.2170481770444894e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 01:00:00",
+      "hour_offset": 3,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 92.6,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.4194301911629736e-07,
+        "Satisfactory": 1.4814111636951566e-05,
+        "Moderate": 0.03790677711367607,
+        "Poor": 0.9260372519493103,
+        "Very Poor": 0.03603873401880264,
+        "Severe": 2.345615030208137e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 02:00:00",
+      "hour_offset": 4,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 92.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.0191454552787036e-07,
+        "Satisfactory": 2.590983967820648e-05,
+        "Moderate": 0.05080167204141617,
+        "Poor": 0.9201075434684753,
+        "Very Poor": 0.029062138870358467,
+        "Severe": 2.628419906613999e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 03:00:00",
+      "hour_offset": 5,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 89.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.3631619089646847e-07,
+        "Satisfactory": 5.2863088058074936e-05,
+        "Moderate": 0.08210579305887222,
+        "Poor": 0.8918106555938721,
+        "Very Poor": 0.02602706104516983,
+        "Severe": 3.326747673781938e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 04:00:00",
+      "hour_offset": 6,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 89.4,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.565955921658315e-07,
+        "Satisfactory": 4.72702959086746e-05,
+        "Moderate": 0.0824601799249649,
+        "Poor": 0.893600583076477,
+        "Very Poor": 0.02388877235352993,
+        "Severe": 2.913001253546099e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 05:00:00",
+      "hour_offset": 7,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 91.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.3480591810075566e-07,
+        "Satisfactory": 2.710849730647169e-05,
+        "Moderate": 0.063014917075634,
+        "Poor": 0.9167412519454956,
+        "Very Poor": 0.020214024931192398,
+        "Severe": 2.361672159167938e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 06:00:00",
+      "hour_offset": 8,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 92.8,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.881681607253995e-07,
+        "Satisfactory": 1.9212095139664598e-05,
+        "Moderate": 0.04277341067790985,
+        "Poor": 0.9284359216690063,
+        "Very Poor": 0.02876811847090721,
+        "Severe": 2.9795151021971833e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 07:00:00",
+      "hour_offset": 9,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 90.4,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 7.459059929715295e-07,
+        "Satisfactory": 2.4674649466760457e-05,
+        "Moderate": 0.027420658618211746,
+        "Poor": 0.9039292335510254,
+        "Very Poor": 0.06861677765846252,
+        "Severe": 7.9792025644565e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 08:00:00",
+      "hour_offset": 10,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 81.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.424555648554815e-06,
+        "Satisfactory": 3.628608101280406e-05,
+        "Moderate": 0.02333526313304901,
+        "Poor": 0.8119919300079346,
+        "Very Poor": 0.16461199522018433,
+        "Severe": 2.3202392185339704e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 09:00:00",
+      "hour_offset": 11,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 95.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.6942907399861724e-07,
+        "Satisfactory": 1.4796956747886725e-05,
+        "Moderate": 0.02740388736128807,
+        "Poor": 0.9520313143730164,
+        "Very Poor": 0.020547151565551758,
+        "Severe": 2.483053322066553e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 10:00:00",
+      "hour_offset": 12,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 93.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.315438507594081e-07,
+        "Satisfactory": 3.882767487084493e-05,
+        "Moderate": 0.060940586030483246,
+        "Poor": 0.9317344427108765,
+        "Very Poor": 0.007285086903721094,
+        "Severe": 8.206670827348717e-07
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 11:00:00",
+      "hour_offset": 13,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 92.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.4311123663901526e-07,
+        "Satisfactory": 2.9096956495777704e-05,
+        "Moderate": 0.06870029866695404,
+        "Poor": 0.925014317035675,
+        "Very Poor": 0.006255612708628178,
+        "Severe": 5.148089599060768e-07
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 12:00:00",
+      "hour_offset": 14,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 96.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 6.757792192502166e-08,
+        "Satisfactory": 4.841904228669591e-06,
+        "Moderate": 0.01904018223285675,
+        "Poor": 0.9611738920211792,
+        "Very Poor": 0.019780032336711884,
+        "Severe": 9.763608659341116e-07
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 13:00:00",
+      "hour_offset": 15,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 96.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 4.104449757846851e-08,
+        "Satisfactory": 4.925563189317472e-06,
+        "Moderate": 0.023229535669088364,
+        "Poor": 0.9653919339179993,
+        "Very Poor": 0.01137315109372139,
+        "Severe": 4.255089720572869e-07
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 14:00:00",
+      "hour_offset": 16,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 76.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.9548195950847003e-07,
+        "Satisfactory": 0.0001139133091783151,
+        "Moderate": 0.23076574504375458,
+        "Poor": 0.767169713973999,
+        "Very Poor": 0.0019500602502375841,
+        "Severe": 4.0482279928255593e-07
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 15:00:00",
+      "hour_offset": 17,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 97.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.463576720401761e-07,
+        "Satisfactory": 0.0022015110589563847,
+        "Moderate": 0.9703162908554077,
+        "Poor": 0.027427252382040024,
+        "Very Poor": 5.4494852520292625e-05,
+        "Severe": 1.4320151819902094e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-03 16:00:00",
+      "hour_offset": 18,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 62.1,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 1.3832788681611419e-05,
+        "Satisfactory": 0.0033044128213077784,
+        "Moderate": 0.6212878227233887,
+        "Poor": 0.3710315525531769,
+        "Very Poor": 0.004350056406110525,
+        "Severe": 1.2369019714242313e-05
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-03 17:00:00",
+      "hour_offset": 19,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 83.4,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 4.536295818979852e-06,
+        "Satisfactory": 0.00015323958359658718,
+        "Moderate": 0.12521368265151978,
+        "Poor": 0.8340036273002625,
+        "Very Poor": 0.040593769401311874,
+        "Severe": 3.117549931630492e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 18:00:00",
+      "hour_offset": 20,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 91.3,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 8.019625852284662e-07,
+        "Satisfactory": 3.9176833524834365e-05,
+        "Moderate": 0.046134863048791885,
+        "Poor": 0.9127694368362427,
+        "Very Poor": 0.04104963690042496,
+        "Severe": 6.108190518716583e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 19:00:00",
+      "hour_offset": 21,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 81.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.2063403573847609e-06,
+        "Satisfactory": 1.531087764305994e-05,
+        "Moderate": 0.020692087709903717,
+        "Poor": 0.8120954036712646,
+        "Very Poor": 0.1671677827835083,
+        "Severe": 2.823815339070279e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 20:00:00",
+      "hour_offset": 22,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 58.6,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 4.409543180372566e-06,
+        "Satisfactory": 3.093030318268575e-05,
+        "Moderate": 0.015582796186208725,
+        "Poor": 0.3975450396537781,
+        "Very Poor": 0.586463212966919,
+        "Severe": 0.00037365788011811674
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 21:00:00",
+      "hour_offset": 23,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 91.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 6.38507526673493e-06,
+        "Satisfactory": 2.196252353314776e-05,
+        "Moderate": 0.009529251605272293,
+        "Poor": 0.07879960536956787,
+        "Very Poor": 0.910508394241333,
+        "Severe": 0.0011343806982040405
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 22:00:00",
+      "hour_offset": 24,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 94.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.2569594218803104e-05,
+        "Satisfactory": 2.42482747125905e-05,
+        "Moderate": 0.00828312337398529,
+        "Poor": 0.04661419242620468,
+        "Very Poor": 0.9417496919631958,
+        "Severe": 0.003316151909530163
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-03 23:00:00",
+      "hour_offset": 25,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 92.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.513748015393503e-05,
+        "Satisfactory": 4.3743610149249434e-05,
+        "Moderate": 0.010942239314317703,
+        "Poor": 0.0517909899353981,
+        "Very Poor": 0.9273837208747864,
+        "Severe": 0.00980420969426632
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 00:00:00",
+      "hour_offset": 26,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 76.6,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 8.896103827282786e-05,
+        "Satisfactory": 0.00017786263197194785,
+        "Moderate": 0.033181071281433105,
+        "Poor": 0.1902439147233963,
+        "Very Poor": 0.7658543586730957,
+        "Severe": 0.010453833267092705
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 01:00:00",
+      "hour_offset": 27,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 75.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.370257036294788e-05,
+        "Satisfactory": 0.0003008618950843811,
+        "Moderate": 0.06615077704191208,
+        "Poor": 0.7546491622924805,
+        "Very Poor": 0.1782606691122055,
+        "Severe": 0.0006049042567610741
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 02:00:00",
+      "hour_offset": 28,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 85.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.676581400213763e-06,
+        "Satisfactory": 0.00021904667664784938,
+        "Moderate": 0.11956460773944855,
+        "Poor": 0.8567575216293335,
+        "Very Poor": 0.023431293666362762,
+        "Severe": 2.3920327294035815e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 03:00:00",
+      "hour_offset": 29,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 62.8,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 2.1521179860428674e-06,
+        "Satisfactory": 0.0006801604758948088,
+        "Moderate": 0.3680008053779602,
+        "Poor": 0.6282019019126892,
+        "Very Poor": 0.003111326601356268,
+        "Severe": 3.7429113035614137e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 04:00:00",
+      "hour_offset": 30,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 80.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 6.730684845024371e-07,
+        "Satisfactory": 0.0013383470941334963,
+        "Moderate": 0.8051499128341675,
+        "Poor": 0.1931096762418747,
+        "Very Poor": 0.0004008985124528408,
+        "Severe": 4.946755325363483e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-04 05:00:00",
+      "hour_offset": 31,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 85.8,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 6.447399982789648e-07,
+        "Satisfactory": 0.0016731400974094868,
+        "Moderate": 0.8575577735900879,
+        "Poor": 0.1404733955860138,
+        "Very Poor": 0.0002946464519482106,
+        "Severe": 4.5478469701265567e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-04 06:00:00",
+      "hour_offset": 32,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 67.4,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.650183548917994e-06,
+        "Satisfactory": 0.001187838613986969,
+        "Moderate": 0.674152135848999,
+        "Poor": 0.32363951206207275,
+        "Very Poor": 0.0010172296315431595,
+        "Severe": 1.6769431567809079e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-04 07:00:00",
+      "hour_offset": 33,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 80.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.200880999225774e-06,
+        "Satisfactory": 0.00027246776153333485,
+        "Moderate": 0.19106490910053253,
+        "Poor": 0.8006614446640015,
+        "Very Poor": 0.007990216836333275,
+        "Severe": 8.802366210147738e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 08:00:00",
+      "hour_offset": 34,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 88.9,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.443001105551957e-06,
+        "Satisfactory": 0.00014050203026272357,
+        "Moderate": 0.09221316128969193,
+        "Poor": 0.8886040449142456,
+        "Very Poor": 0.019014624878764153,
+        "Severe": 2.426659375487361e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 09:00:00",
+      "hour_offset": 35,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 84.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.522147269701236e-06,
+        "Satisfactory": 0.00022710580378770828,
+        "Moderate": 0.14549897611141205,
+        "Poor": 0.8453198671340942,
+        "Very Poor": 0.008940626867115498,
+        "Severe": 1.0869869583984837e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 10:00:00",
+      "hour_offset": 36,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 73.3,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.329726041556569e-06,
+        "Satisfactory": 0.0005183586617931724,
+        "Moderate": 0.2610872983932495,
+        "Poor": 0.7330728769302368,
+        "Very Poor": 0.005308410152792931,
+        "Severe": 9.64102855505189e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 11:00:00",
+      "hour_offset": 37,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 88.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.3820596197765553e-06,
+        "Satisfactory": 0.00014631272642873228,
+        "Moderate": 0.10617101192474365,
+        "Poor": 0.8824565410614014,
+        "Very Poor": 0.011209550313651562,
+        "Severe": 1.4231379282136913e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 12:00:00",
+      "hour_offset": 38,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 93.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.2713917385553941e-06,
+        "Satisfactory": 1.561664612381719e-05,
+        "Moderate": 0.030463140457868576,
+        "Poor": 0.930406391620636,
+        "Very Poor": 0.039066512137651443,
+        "Severe": 4.7050980356289074e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 13:00:00",
+      "hour_offset": 39,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 93.4,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 5.801418865303276e-07,
+        "Satisfactory": 1.2258923561603297e-05,
+        "Moderate": 0.03832478076219559,
+        "Poor": 0.9342556595802307,
+        "Very Poor": 0.02738848887383938,
+        "Severe": 1.822511876525823e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 14:00:00",
+      "hour_offset": 40,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 82.8,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 5.415713530965149e-07,
+        "Satisfactory": 0.00011577928671613336,
+        "Moderate": 0.1676296591758728,
+        "Poor": 0.8279011249542236,
+        "Very Poor": 0.004349825903773308,
+        "Severe": 3.05732623928634e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 15:00:00",
+      "hour_offset": 41,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 92.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 7.046235168672865e-07,
+        "Satisfactory": 0.002463048091158271,
+        "Moderate": 0.9197129607200623,
+        "Poor": 0.07764676958322525,
+        "Very Poor": 0.00017605797620490193,
+        "Severe": 5.022725417802576e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-04 16:00:00",
+      "hour_offset": 42,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 74.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.3044024854025338e-05,
+        "Satisfactory": 0.004207836929708719,
+        "Moderate": 0.7396216988563538,
+        "Poor": 0.25359585881233215,
+        "Very Poor": 0.00255311350338161,
+        "Severe": 8.491935659549199e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-04 17:00:00",
+      "hour_offset": 43,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 81.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.0010520782088861e-05,
+        "Satisfactory": 0.00028328836197033525,
+        "Moderate": 0.1521729677915573,
+        "Poor": 0.8122164011001587,
+        "Very Poor": 0.03522638976573944,
+        "Severe": 9.10057351575233e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 18:00:00",
+      "hour_offset": 44,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 86.6,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 7.576262760267127e-06,
+        "Satisfactory": 0.0001267378102056682,
+        "Moderate": 0.06135563552379608,
+        "Poor": 0.8659228682518005,
+        "Very Poor": 0.07249481976032257,
+        "Severe": 9.24206105992198e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 19:00:00",
+      "hour_offset": 45,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 71.9,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 1.6713856894057244e-05,
+        "Satisfactory": 7.10806853021495e-05,
+        "Moderate": 0.0323319174349308,
+        "Poor": 0.7190027236938477,
+        "Very Poor": 0.24800735712051392,
+        "Severe": 0.0005702588823623955
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 20:00:00",
+      "hour_offset": 46,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 64.2,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 4.4874661398353055e-05,
+        "Satisfactory": 0.00010013241990236565,
+        "Moderate": 0.022723915055394173,
+        "Poor": 0.33094969391822815,
+        "Very Poor": 0.6417536735534668,
+        "Severe": 0.004427775740623474
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 21:00:00",
+      "hour_offset": 47,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 87.3,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 6.704573024762794e-05,
+        "Satisfactory": 9.234704339178279e-05,
+        "Moderate": 0.01573186181485653,
+        "Poor": 0.09625817090272903,
+        "Very Poor": 0.873240053653717,
+        "Severe": 0.014610555954277515
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 22:00:00",
+      "hour_offset": 48,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 87.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 0.00011860139784403145,
+        "Satisfactory": 0.0001111273595597595,
+        "Moderate": 0.014114951714873314,
+        "Poor": 0.06239159032702446,
+        "Very Poor": 0.8754040002822876,
+        "Severe": 0.04785976931452751
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-04 23:00:00",
+      "hour_offset": 49,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 84.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 0.00023797598259989172,
+        "Satisfactory": 0.00018750545859802514,
+        "Moderate": 0.016933798789978027,
+        "Poor": 0.07002396136522293,
+        "Very Poor": 0.8414770364761353,
+        "Severe": 0.07113973796367645
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 00:00:00",
+      "hour_offset": 50,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 73.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 0.00033645398798398674,
+        "Satisfactory": 0.0004285056493245065,
+        "Moderate": 0.0324556827545166,
+        "Poor": 0.172151118516922,
+        "Very Poor": 0.7296578884124756,
+        "Severe": 0.06497029215097427
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Very Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 01:00:00",
+      "hour_offset": 51,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 63.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 0.00010575262422207743,
+        "Satisfactory": 0.0006489524384960532,
+        "Moderate": 0.07379426807165146,
+        "Poor": 0.6307149529457092,
+        "Very Poor": 0.28925397992134094,
+        "Severe": 0.005482148379087448
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 02:00:00",
+      "hour_offset": 52,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 86.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 8.312272257171571e-06,
+        "Satisfactory": 0.0003433088422752917,
+        "Moderate": 0.10331429541110992,
+        "Poor": 0.8602592349052429,
+        "Very Poor": 0.03600203990936279,
+        "Severe": 7.277018448803574e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 03:00:00",
+      "hour_offset": 53,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 69.3,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.3941729523357935e-06,
+        "Satisfactory": 0.0005726300296373665,
+        "Moderate": 0.30303719639778137,
+        "Poor": 0.6927737593650818,
+        "Very Poor": 0.003608261700719595,
+        "Severe": 5.794754542876035e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 04:00:00",
+      "hour_offset": 54,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 84.8,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 4.691216588526004e-07,
+        "Satisfactory": 0.0013172205071896315,
+        "Moderate": 0.8478721380233765,
+        "Poor": 0.15057173371315002,
+        "Very Poor": 0.00023807285469956696,
+        "Severe": 4.216151694436121e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 05:00:00",
+      "hour_offset": 55,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 96.1,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.8516895750053664e-07,
+        "Satisfactory": 0.0016293516382575035,
+        "Moderate": 0.9613435864448547,
+        "Poor": 0.036980003118515015,
+        "Very Poor": 4.6742679842282087e-05,
+        "Severe": 1.0706783371006168e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 06:00:00",
+      "hour_offset": 56,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 94.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.738862292517297e-07,
+        "Satisfactory": 0.0016406571958214045,
+        "Moderate": 0.9470313787460327,
+        "Poor": 0.05125828832387924,
+        "Very Poor": 6.918315193615854e-05,
+        "Severe": 1.5054615687404294e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 07:00:00",
+      "hour_offset": 57,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 60.1,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 1.4765706737307482e-06,
+        "Satisfactory": 0.0010123682441189885,
+        "Moderate": 0.600673258304596,
+        "Poor": 0.397061288356781,
+        "Very Poor": 0.0012498499127104878,
+        "Severe": 1.8392479432804976e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 08:00:00",
+      "hour_offset": 58,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 68.8,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 1.6526328181498684e-06,
+        "Satisfactory": 0.0004993908805772662,
+        "Moderate": 0.3069003224372864,
+        "Poor": 0.6882655620574951,
+        "Very Poor": 0.004328366369009018,
+        "Severe": 4.695257302955724e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Moderate",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 09:00:00",
+      "hour_offset": 59,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 61.1,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 1.8266646293341182e-06,
+        "Satisfactory": 0.0012693279422819614,
+        "Moderate": 0.6111929416656494,
+        "Poor": 0.3862978219985962,
+        "Very Poor": 0.001236222917214036,
+        "Severe": 1.906246779981302e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 10:00:00",
+      "hour_offset": 60,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 87.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.2620473626157036e-06,
+        "Satisfactory": 0.002732043620198965,
+        "Moderate": 0.8765591382980347,
+        "Poor": 0.12039776891469955,
+        "Very Poor": 0.00030903227161616087,
+        "Severe": 7.09968617229606e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 11:00:00",
+      "hour_offset": 61,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 77.7,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 1.6565520581934834e-06,
+        "Satisfactory": 0.0002904931898228824,
+        "Moderate": 0.21747508645057678,
+        "Poor": 0.7770212888717651,
+        "Very Poor": 0.005204656161367893,
+        "Severe": 6.8070366978645325e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 12:00:00",
+      "hour_offset": 62,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 92.0,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 9.065081485459814e-07,
+        "Satisfactory": 2.0103572751395404e-05,
+        "Moderate": 0.05897011607885361,
+        "Poor": 0.9201270341873169,
+        "Very Poor": 0.02085312083363533,
+        "Severe": 2.8756207029800862e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 13:00:00",
+      "hour_offset": 63,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 90.8,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.3951579325730563e-07,
+        "Satisfactory": 2.5350360374432057e-05,
+        "Moderate": 0.08353611826896667,
+        "Poor": 0.907911479473114,
+        "Very Poor": 0.008521141484379768,
+        "Severe": 5.5746922953403555e-06
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 14:00:00",
+      "hour_offset": 64,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 53.0,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 7.148841518755944e-07,
+        "Satisfactory": 0.0003911781241185963,
+        "Moderate": 0.46846550703048706,
+        "Poor": 0.5298159122467041,
+        "Very Poor": 0.0013254338409751654,
+        "Severe": 1.2898715340270428e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 15:00:00",
+      "hour_offset": 65,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 96.5,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 3.4128194670302037e-07,
+        "Satisfactory": 0.0024134584236890078,
+        "Moderate": 0.9647414088249207,
+        "Poor": 0.03277614340186119,
+        "Very Poor": 6.854111416032538e-05,
+        "Severe": 1.0762683189113886e-07
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 16:00:00",
+      "hour_offset": 66,
+      "predicted_code": 2,
+      "predicted_category": "Moderate",
+      "confidence": 87.3,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 5.349459570425097e-06,
+        "Satisfactory": 0.005256958305835724,
+        "Moderate": 0.8730747103691101,
+        "Poor": 0.12079311162233353,
+        "Very Poor": 0.0008677454898133874,
+        "Severe": 2.0890540781692835e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Moderate"
+      },
+      "risk_info": {
+        "risk_level": "Moderate",
+        "risk_score": 3,
+        "color": "#FF9933",
+        "impact": "Members of sensitive groups may experience health effects. The general public is unlikely to be affected.",
+        "advisory": "People with respiratory disease (asthma), elderly, and children should limit prolonged outdoor exertion."
+      }
+    },
+    {
+      "datetime": "2026-11-05 17:00:00",
+      "hour_offset": 67,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 53.8,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 9.608589607523754e-06,
+        "Satisfactory": 0.0011675443965941668,
+        "Moderate": 0.4542334973812103,
+        "Poor": 0.5375397205352783,
+        "Very Poor": 0.007026074454188347,
+        "Severe": 2.3534303181804717e-05
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 18:00:00",
+      "hour_offset": 68,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 51.0,
+      "agreement": 33.3,
+      "probabilities": {
+        "Good": 4.135571998631349e-06,
+        "Satisfactory": 0.0009187092655338347,
+        "Moderate": 0.4854854345321655,
+        "Poor": 0.510344386100769,
+        "Very Poor": 0.003240266814827919,
+        "Severe": 7.1012200351106e-06
+      },
+      "individual_predictions": {
+        "cnn": "Moderate",
+        "lstm": "Moderate",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 19:00:00",
+      "hour_offset": 69,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 78.8,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 2.1494417978829006e-06,
+        "Satisfactory": 0.0002199737646151334,
+        "Moderate": 0.19871202111244202,
+        "Poor": 0.7879518270492554,
+        "Very Poor": 0.013095585629343987,
+        "Severe": 1.8480724975233898e-05
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 20:00:00",
+      "hour_offset": 70,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 85.6,
+      "agreement": 100.0,
+      "probabilities": {
+        "Good": 4.018373147118837e-06,
+        "Satisfactory": 7.561434176750481e-05,
+        "Moderate": 0.061515744775533676,
+        "Poor": 0.8560836911201477,
+        "Very Poor": 0.08209925889968872,
+        "Severe": 0.00022173802426550537
+      },
+      "individual_predictions": {
+        "cnn": "Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 21:00:00",
+      "hour_offset": 71,
+      "predicted_code": 3,
+      "predicted_category": "Poor",
+      "confidence": 59.4,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 2.0738722014357336e-05,
+        "Satisfactory": 0.00018241230282001197,
+        "Moderate": 0.05498112738132477,
+        "Poor": 0.593858003616333,
+        "Very Poor": 0.3469586968421936,
+        "Severe": 0.003999088425189257
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Poor"
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "datetime": "2026-11-05 22:00:00",
+      "hour_offset": 72,
+      "predicted_code": 4,
+      "predicted_category": "Very Poor",
+      "confidence": 48.3,
+      "agreement": 66.7,
+      "probabilities": {
+        "Good": 5.488838360179216e-05,
+        "Satisfactory": 0.00034643823164515197,
+        "Moderate": 0.05359603464603424,
+        "Poor": 0.451141893863678,
+        "Very Poor": 0.483107328414917,
+        "Severe": 0.011753464117646217
+      },
+      "individual_predictions": {
+        "cnn": "Very Poor",
+        "lstm": "Poor",
+        "cnn_lstm": "Very Poor"
+      },
+      "risk_info": {
+        "risk_level": "Very High",
+        "risk_score": 5,
+        "color": "#660099",
+        "impact": "Health alert: everyone may experience more serious health effects.",
+        "advisory": "Minimize outdoor activities. Use N95 masks. Keep windows closed. Use air purifiers indoors."
+      }
+    }
+  ],
+  "daily_summaries": [
+    {
+      "date": "2026-11-02",
+      "dominant_category": "Poor",
+      "dominant_code": 3,
+      "worst_category": "Poor",
+      "worst_code": 3,
+      "best_category": "Poor",
+      "best_code": 3,
+      "avg_confidence": 91.1,
+      "hours_predicted": 1,
+      "category_distribution": {
+        "Poor": 1
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "dominant_category": "Poor",
+      "dominant_code": 3,
+      "worst_category": "Very Poor",
+      "worst_code": 4,
+      "best_category": "Moderate",
+      "best_code": 2,
+      "avg_confidence": 88.1,
+      "hours_predicted": 24,
+      "category_distribution": {
+        "Moderate": 2,
+        "Poor": 18,
+        "Very Poor": 4
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "date": "2026-11-04",
+      "dominant_category": "Poor",
+      "dominant_code": 3,
+      "worst_category": "Very Poor",
+      "worst_code": 4,
+      "best_category": "Moderate",
+      "best_code": 2,
+      "avg_confidence": 81.1,
+      "hours_predicted": 24,
+      "category_distribution": {
+        "Moderate": 5,
+        "Poor": 14,
+        "Very Poor": 5
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    },
+    {
+      "date": "2026-11-05",
+      "dominant_category": "Poor",
+      "dominant_code": 3,
+      "worst_category": "Very Poor",
+      "worst_code": 4,
+      "best_category": "Moderate",
+      "best_code": 2,
+      "avg_confidence": 74.7,
+      "hours_predicted": 23,
+      "category_distribution": {
+        "Moderate": 8,
+        "Poor": 13,
+        "Very Poor": 2
+      },
+      "risk_info": {
+        "risk_level": "High",
+        "risk_score": 4,
+        "color": "#CC0033",
+        "impact": "Everyone may begin to experience health effects. Sensitive groups may experience more serious effects.",
+        "advisory": "Avoid prolonged outdoor activities. Use masks if going outside. Sensitive groups should stay indoors."
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-03 20:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-03 21:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-03 22:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-03 23:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-04 00:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-04 20:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-04 21:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-04 22:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-04 23:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-05 00:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    },
+    {
+      "level": "WARNING",
+      "category": "Very Poor",
+      "category_code": 4,
+      "aqi_value": null,
+      "timestamp": "2026-11-05 22:00:00",
+      "message": "🟠 VERY POOR AIR QUALITY ALERT: AQI is in the VERY POOR range. Significant health risk for sensitive groups.",
+      "health_advisory": "MINIMIZE outdoor activities, especially strenuous exercise. Wear N95 masks if going outside. Keep windows closed. Sensitive groups should avoid all outdoor exertion."
+    }
+  ],
+  "trend": {
+    "direction": "stable",
+    "description": "Air quality is expected to remain relatively stable.",
+    "avg_code_early": 3.04,
+    "avg_code_late": 2.79,
+    "change": -0.25
+  }
+}

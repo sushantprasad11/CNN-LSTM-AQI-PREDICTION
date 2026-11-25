@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Prediction Dashboard — Hybrid CNN-LSTM</title>
+    <meta name="description" content="Air Quality Index Prediction using Hybrid CNN-LSTM Deep Learning Model — Results Dashboard">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Ambient background orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="container">
+        <!-- Hero Header -->
+        <header id="hero">
+            <div class="hero-badge">Air Quality Forecasting System</div>
+            <h1>Air Quality Prediction & Analysis</h1>
+            <p class="subtitle">Deep learning air quality forecasts for Delhi, India (2022–2025)</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value">80.6%</span>
+                    <span class="hero-stat-label">Best Accuracy</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">0.806</span>
+                    <span class="hero-stat-label">F1-Score</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">90.5%</span>
+                    <span class="hero-stat-label">Alert F1</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">35K+</span>
+                    <span class="hero-stat-label">Data Points</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav id="nav" class="nav-bar">
+            <a href="#live-prediction" class="nav-link active">Live Forecast</a>
+            <a href="#models" class="nav-link">Model Comparison</a>
+            <a href="#warning" class="nav-link">Early Warning</a>
+            <a href="#ablation" class="nav-link">Feature Analysis</a>
+            <a href="#meteo" class="nav-link">Weather Impact</a>
+            <a href="#categories" class="nav-link">AQI Standards</a>
+            <a href="#training" class="nav-link">Training Analysis</a>
+        </nav>
+
+        <!-- Section 0: Live Dynamic Prediction (TOP OF PAGE) -->
+        <section id="live-prediction" class="card live-prediction-card">
+            <div class="card-header live-card-header">
+                <div class="live-title-wrap">
+                    <span class="live-pulse-badge">
+                        <span class="pulse-dot"></span> Live Sync Active
+                    </span>
+                    <h2>Current Air Quality Prediction</h2>
+                </div>
+                <div class="live-actions-bar">
+                    <span id="live-updated-text" class="live-timestamp">
+                        {% if results.latest_prediction %}
+                            Updated: {{ results.latest_prediction.updated_at }}
+                        {% else %}
+                            Waiting for prediction command...
+                        {% endif %}
+                    </span>
+                    <button id="btn-refresh-live" class="btn-live-action" title="Refresh Live Results">
+                        Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Prediction Controls: Date & Time Picker + Quick Actions -->
+            <div class="pred-control-panel">
+                <div class="pred-control-header">
+                    <div class="pred-control-title">
+                        <span class="title-badge">Interactive Model Inference</span>
+                        <h3>Predict Air Quality for Specific Date & Time</h3>
+                    </div>
+                    <span class="pred-control-sub">Select past date for historical validation or future date for forecast</span>
+                </div>
+                <div class="pred-control-row">
+                    <div class="datetime-input-wrap">
+                        <label for="pred-datetime-input" class="datetime-label">
+                            Target Date and Time (Delhi / IST):
+                        </label>
+                        <input type="datetime-local" id="pred-datetime-input" class="datetime-input" step="3600">
+                    </div>
+
+                    <div class="preset-chips-wrap">
+                        <span class="presets-label">Quick Presets:</span>
+                        <div class="preset-chips">
+                            <button type="button" class="preset-chip active" data-preset="now">Current Hour</button>
+                            <button type="button" class="preset-chip" data-preset="tomorrow">Tomorrow 10:00 AM</button>
+                            <button type="button" class="preset-chip" data-preset="day_after">Day After 2:00 PM</button>
+                            <button type="button" class="preset-chip" data-preset="past_monsoon">Monsoon Season (Jul 2025)</button>
+                            <button type="button" class="preset-chip" data-preset="past_winter">Winter Episode (Nov 2024)</button>
+                        </div>
+                    </div>
+
+                    <div class="pred-buttons-wrap">
+                        <button id="btn-predict-datetime" class="btn-live-action btn-predict-primary" title="Start AQI Prediction for Selected Date & Time">
+                            <span class="btn-text">Predict Air Quality</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Processing Status / Progress Bar -->
+                <div id="pred-loading-bar" class="pred-loading-bar" style="display: none;">
+                    <div class="loading-indicator">
+                        <span class="loading-spinner"></span>
+                        <span id="pred-loading-msg" class="loading-msg">Extracting 82 environmental features and running Hybrid CNN-LSTM model...</span>
+                    </div>
+                    <div class="loading-progress-track">
+                        <div class="loading-progress-shimmer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="live-command-banner" class="live-command-banner">
+                {% if results.latest_prediction and results.latest_prediction.command %}
+                    <span class="cmd-label">Source:</span> <code>{{ results.latest_prediction.command }}</code>
+                {% else %}
+                    <span class="cmd-label">Tip:</span> Select any date and time above, or run <code>python predict_any_datetime.py "2026-11-26 14:00"</code> in PowerShell.
+                {% endif %}
+            </div>
+
+            <div id="live-prediction-body">
+                {% if results.latest_prediction and results.latest_prediction.summary %}
+                    {% set p = results.latest_prediction %}
+                    {% set s = p.summary %}
+                    {% set cat_color = aqi_info[s.dominant_code].color if s.dominant_code in aqi_info else '#3a7bd5' %}
+
+                    <div class="live-hero-card" style="--aqi-theme: {{ cat_color }};">
+                        <div class="live-hero-left">
+                            <div class="live-category-badge" style="background: {{ cat_color }};">
+                                {{ s.dominant_category|upper }}
+                            </div>
+                            <div class="live-hero-details">
+                                <h3>{{ s.title }}</h3>
+                                <p class="live-hero-sub">
+                                    Target: <strong>{{ s.target_datetime }}</strong> ({{ s.mode }}) — {{ s.risk_level }} Risk
+                                </p>
+                            </div>
+                        </div>
+                        <div class="live-hero-right">
+                            <div class="live-stat-pill">
+                                <span class="pill-label">Confidence</span>
+                                <span class="pill-val">{{ s.avg_confidence }}%</span>
+                            </div>
+                            <div class="live-stat-pill">
+                                <span class="pill-label">Risk Level</span>
+                                <span class="pill-val">{{ s.risk_level }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if p.data %}
+                        {% set d = p.data %}
+                        <div class="live-sub-section">
+                            <div class="single-pred-grid">
+                                <div class="single-pred-card">
+                                    <h4>Health Impact and Guidance</h4>
+                                    <div class="risk-badge-large" style="border-color: {{ d.risk_info.color }}; color: {{ d.risk_info.color }};">
+                                        {{ d.risk_info.risk_level }} Risk
+                                    </div>
+                                    <p class="single-advisory-p"><strong>Guidance:</strong> {{ d.risk_info.advisory }}</p>
+                                    <p class="single-impact-p"><strong>Health Effect:</strong> {{ d.risk_info.impact }}</p>
+                                </div>
+                                <div class="single-pred-card">
+                                    <h4>Category Probability Distribution</h4>
+                                    <div class="prob-bars-list">
+                                        {% for cat_name, prob in d.probabilities.items() %}
+                                        {% set prob_pct = (prob * 100) if prob <= 1.0 else prob %}
+                                        {% set prob_code = loop.index0 %}
+                                        {% set cat_color = aqi_info[prob_code].color if prob_code in aqi_info else '#3a7bd5' %}
+                                        <div class="prob-row-item {% if cat_name == d.predicted_category %}prob-row-highlight{% endif %}">
+                                            <span class="prob-cat-name">{{ cat_name }}</span>
+                                            <div class="prob-progress-track">
+                                                <div class="prob-progress-fill" style="width: {{ prob_pct }}%; background: {{ cat_color }};"></div>
+                                            </div>
+                                            <span class="prob-val-text">{{ "%.1f"|format(prob_pct) }}%</span>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% else %}
+                    <div class="live-empty-card">
+                        <h3>No Prediction Available Yet</h3>
+                        <p>Select a date and time above to forecast air quality, or run a prediction script from your command line.</p>
+                        <div class="empty-cli-hint">
+                            <code>python predict_any_datetime.py "2026-11-26 14:00"</code>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Section 1: Model Comparison -->
+        <section id="models" class="card">
+            <div class="card-header">
+                <h2>Model Performance Comparison</h2>
+                <span class="card-badge">Test Set: 8,941 samples</span>
+            </div>
+            {% if results.summary and results.summary.model_comparison %}
+            <div class="model-cards">
+                {% for model in results.summary.model_comparison %}
+                <div class="model-result-card {% if model.Model == 'Hybrid CNN-LSTM' %}best{% endif %}">
+                    {% if model.Model == 'Hybrid CNN-LSTM' %}
+                    <div class="best-ribbon">Top Performing Model</div>
+                    {% endif %}
+                    <h3>{{ model.Model }}</h3>
+                    <div class="metric-grid">
+                        <div class="metric">
+                            <span class="metric-value">{{ "%.1f"|format(model.accuracy * 100) }}%</span>
+                            <span class="metric-label">Accuracy</span>
+                            <div class="metric-bar"><div class="metric-fill" style="width: {{ model.accuracy * 100 }}%; background: var(--accent-blue);"></div></div>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">{{ "%.1f"|format(model.precision * 100) }}%</span>
+                            <span class="metric-label">Precision</span>
+                            <div class="metric-bar"><div class="metric-fill" style="width: {{ model.precision * 100 }}%; background: var(--accent-green);"></div></div>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">{{ "%.1f"|format(model.recall * 100) }}%</span>
+                            <span class="metric-label">Recall</span>
+                            <div class="metric-bar"><div class="metric-fill" style="width: {{ model.recall * 100 }}%; background: var(--accent-orange);"></div></div>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">{{ "%.4f"|format(model.f1_score) }}</span>
+                            <span class="metric-label">F1-Score</span>
+                            <div class="metric-bar"><div class="metric-fill" style="width: {{ model.f1_score * 100 }}%; background: var(--accent-pink);"></div></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Statistical tests -->
+            {% if results.mcnemar %}
+            <div class="stats-note">
+                <strong>McNemar's Statistical Significance Tests:</strong> All pairwise model differences are statistically significant (p &lt; 0.001).
+                {% for test in results.mcnemar %}
+                <span class="test-chip">{{ test.model_1 }} vs {{ test.model_2 }}: χ²={{ test.chi2_statistic }} (Significant)</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endif %}
+
+            <!-- Confusion Matrix Images -->
+            <div class="plot-section">
+                <h3>Confusion Matrices</h3>
+                <div class="plot-grid-3">
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='plots/cm_cnn.png') }}" alt="CNN Confusion Matrix" loading="lazy">
+                        <span class="plot-label">CNN</span>
+                    </div>
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='plots/cm_lstm.png') }}" alt="LSTM Confusion Matrix" loading="lazy">
+                        <span class="plot-label">LSTM</span>
+                    </div>
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='plots/cm_hybrid.png') }}" alt="Hybrid Confusion Matrix" loading="lazy">
+                        <span class="plot-label">Hybrid CNN-LSTM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Early Warning System -->
+        <section id="warning" class="card warning-card">
+            <div class="card-header">
+                <h2>Early Warning & Alert System</h2>
+                <span class="card-badge alert-badge">Extension 3</span>
+            </div>
+            {% if results.summary and results.summary.early_warning %}
+            {% set ew = results.summary.early_warning %}
+            <p class="section-desc">Automated alert module that flags "Very Poor" and "Severe" AQI predictions for public health warnings.</p>
+            <div class="warning-metrics">
+                <div class="warning-metric">
+                    <div class="warning-ring" style="--pct: {{ (ew.alert_precision * 100)|int }}; --ring-color: #4CAF50;">
+                        <span>{{ "%.1f"|format(ew.alert_precision * 100) }}%</span>
+                    </div>
+                    <span class="warning-label">Alert Precision</span>
+                    <span class="warning-sub">Only {{ "%.1f"|format((1 - ew.alert_precision) * 100) }}% false alarms</span>
+                </div>
+                <div class="warning-metric">
+                    <div class="warning-ring" style="--pct: {{ (ew.alert_recall * 100)|int }}; --ring-color: #FF9800;">
+                        <span>{{ "%.1f"|format(ew.alert_recall * 100) }}%</span>
+                    </div>
+                    <span class="warning-label">Alert Recall</span>
+                    <span class="warning-sub">Detects {{ "%.1f"|format(ew.alert_recall * 100) }}% of hazardous events</span>
+                </div>
+                <div class="warning-metric">
+                    <div class="warning-ring" style="--pct: {{ (ew.alert_f1_score * 100)|int }}; --ring-color: #E91E63;">
+                        <span>{{ "%.1f"|format(ew.alert_f1_score * 100) }}%</span>
+                    </div>
+                    <span class="warning-label">Alert F1-Score</span>
+                    <span class="warning-sub">Overall alert performance</span>
+                </div>
+            </div>
+            <div class="warning-confusion">
+                <div class="wc-cell tp">True Positives<br><strong>{{ ew.true_positives }}</strong><small>Correct High Risk</small></div>
+                <div class="wc-cell fp">False Positives<br><strong>{{ ew.false_positives }}</strong><small>False Alarms</small></div>
+                <div class="wc-cell fn">False Negatives<br><strong>{{ ew.false_negatives }}</strong><small>Missed High Risk</small></div>
+                <div class="wc-cell tn">True Negatives<br><strong>{{ ew.true_negatives }}</strong><small>Correct Low Risk</small></div>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Section 3: Ablation Study -->
+        <section id="ablation" class="card">
+            <div class="card-header">
+                <h2>Step-wise Feature Ablation Study</h2>
+                <span class="card-badge">Extension 2</span>
+            </div>
+            <p class="section-desc">Quantifies the incremental contribution of each feature category by training the Hybrid CNN-LSTM model with progressively added feature groups.</p>
+            {% if results.ablation %}
+            <div class="ablation-table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>+ Feature Group</th>
+                            <th>Total Features</th>
+                            <th>Accuracy</th>
+                            <th>F1-Score</th>
+                            <th>Epochs</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in results.ablation %}
+                        <tr {% if row.step|string == '3' %}class="highlight-row"{% endif %}>
+                            <td><span class="step-num">{{ row.step }}</span></td>
+                            <td>{{ row.feature_group|replace('_', ' ')|title }}</td>
+                            <td>{{ row.n_features }}</td>
+                            <td>{{ "%.4f"|format(row.accuracy|float) }}</td>
+                            <td><strong>{{ "%.4f"|format(row.f1_score|float) }}</strong></td>
+                            <td>{{ row.epochs_trained }}</td>
+                            <td>
+                                {% if loop.index > 1 %}
+                                    {% set delta = row.f1_score|float - results.ablation[loop.index - 2].f1_score|float %}
+                                    <span class="delta {% if delta >= 0 %}positive{% else %}negative{% endif %}">
+                                        {{ "%+.4f"|format(delta) }}
+                                    </span>
+                                {% else %}
+                                    <span class="delta baseline">baseline</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+            <div class="plot-section">
+                <div class="plot-grid-2">
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='ablation/ablation_chart.png') }}" alt="Ablation Study Chart" loading="lazy">
+                        <span class="plot-label">Performance Progression & Incremental Contribution</span>
+                    </div>
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='ablation/feature_count_vs_performance.png') }}" alt="Feature Count vs Performance" loading="lazy">
+                        <span class="plot-label">Feature Count vs Model Performance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Meteorological Comparison -->
+        <section id="meteo" class="card">
+            <div class="card-header">
+                <h2>Meteorological Feature Impact</h2>
+                <span class="card-badge">Extension 1</span>
+            </div>
+            <p class="section-desc">Compares model performance with pollutant-only features vs. pollutant + meteorological features (temperature, humidity, wind speed, pressure).</p>
+            {% if results.meteorological %}
+            <div class="meteo-comparison">
+                {% for row in results.meteorological %}
+                <div class="meteo-card">
+                    <h4>{{ row.Model }}</h4>
+                    <div class="meteo-bars">
+                        <div class="meteo-row">
+                            <span class="meteo-label">F1 (Pollutants Only)</span>
+                            <div class="meteo-bar-wrap">
+                                <div class="meteo-bar poll" style="width: {{ row['F1 (Poll Only)']|float * 100 }}%;">
+                                    {{ "%.3f"|format(row['F1 (Poll Only)']|float) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="meteo-row">
+                            <span class="meteo-label">F1 (+ Weather)</span>
+                            <div class="meteo-bar-wrap">
+                                <div class="meteo-bar weather" style="width: {{ row['F1 (+ Weather)']|float * 100 }}%;">
+                                    {{ "%.3f"|format(row['F1 (+ Weather)']|float) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meteo-delta {% if row['F1 Delta']|float >= 0 %}positive{% else %}negative{% endif %}">
+                        Difference: {{ "%+.4f"|format(row['F1 Delta']|float) }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="plot-section">
+                <div class="plot-card wide">
+                    <img src="{{ url_for('serve_plot', filename='meteorological/weather_comparison_chart.png') }}" alt="Weather Comparison Chart" loading="lazy">
+                    <span class="plot-label">Accuracy & F1-Score: Pollutant-Only vs With Weather</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: AQI Categories -->
+        <section id="categories" class="card">
+            <div class="card-header">
+                <h2>Air Quality Categories (CPCB Standard)</h2>
+            </div>
+            <div class="category-grid">
+                {% for code, info in aqi_info.items() %}
+                <div class="category-card" style="--cat-color: {{ info.color }}">
+                    <div class="category-header">
+                        <span class="category-dot" style="background: {{ info.color }}"></span>
+                        <span class="category-label">{{ info.label }}</span>
+                        <span class="category-range">{{ info.range }}</span>
+                    </div>
+                    <div class="category-body">
+                        <span class="risk-badge" style="border-color: {{ info.color }}; color: {{ info.color }}">{{ info.risk }} Risk</span>
+                        <p class="advisory">{{ info.advisory }}</p>
+                    </div>
+                    {% if code >= 4 %}
+                    <div class="alert-tag">Alert Level</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Section 6: Training History -->
+        <section id="training" class="card">
+            <div class="card-header">
+                <h2>Model Training & Convergence</h2>
+            </div>
+            {% if results.summary and results.summary.training_summary %}
+            <div class="training-stats">
+                {% for name, ts in results.summary.training_summary.items() %}
+                <div class="train-stat-card">
+                    <h4>{{ name|upper }}</h4>
+                    <div class="train-detail"><span>Epochs:</span> <strong>{{ ts.total_epochs }}</strong></div>
+                    <div class="train-detail"><span>Best Val Loss:</span> <strong>{{ "%.4f"|format(ts.best_val_loss) }}</strong></div>
+                    <div class="train-detail"><span>Best Val Acc:</span> <strong>{{ "%.1f"|format(ts.best_val_accuracy * 100) }}%</strong></div>
+                    <div class="train-detail"><span>Final Train Acc:</span> <strong>{{ "%.1f"|format(ts.final_train_accuracy * 100) }}%</strong></div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="plot-section">
+                <div class="plot-grid-2">
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='plots/training_history.png') }}" alt="Training History" loading="lazy">
+                        <span class="plot-label">Loss & Accuracy Curves — All Models</span>
+                    </div>
+                    <div class="plot-card">
+                        <img src="{{ url_for('serve_plot', filename='plots/convergence_comparison.png') }}" alt="Convergence Comparison" loading="lazy">
+                        <span class="plot-label">Validation Convergence Overlay</span>
+                    </div>
+                </div>
+            </div>
+            <div class="plot-section">
+                <div class="plot-card wide">
+                    <img src="{{ url_for('serve_plot', filename='plots/model_comparison.png') }}" alt="Model Comparison" loading="lazy">
+                    <span class="plot-label">Grouped Bar Chart — All Metrics</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Project Info -->
+        <section class="card">
+            <div class="card-header">
+                <h2>Project & Academic Information</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div>
+                        <strong>Institution</strong>
+                        <p>G.L. Bajaj Institute of Technology and Management</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <strong>Project Guide</strong>
+                        <p>Prof. Animesh Malviya</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <strong>Student Researchers</strong>
+                        <p>Sushant Prasad, Shivam Verma, Harshit Giri, Adarsh Raj</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <strong>Data Source</strong>
+                        <p>Open-Meteo Public API (Free & Open Access)</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <strong>Target City</strong>
+                        <p>Delhi, India (28.6139°N, 77.2090°E)</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <strong>Data Window</strong>
+                        <p>2022-01-01 to 2025-12-31 (4 years, hourly)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Developed by <strong>Sushant Prasad, Shivam Verma, Harshit Giri, Adarsh Raj</strong></p>
+            <p>G.L. Bajaj Institute of Technology and Management | Guide: Animesh Malviya</p>
+            <p class="footer-sub">AQI Prediction using Hybrid CNN-LSTM Deep Learning Model</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

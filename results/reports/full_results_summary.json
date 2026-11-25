@@ -1,0 +1,160 @@
+{
+  "project": "AQI Prediction using Hybrid CNN-LSTM",
+  "city": "Delhi, India",
+  "data_period": "2022-01-01 to 2025-12-31",
+  "model_comparison": [
+    {
+      "Model": "CNN",
+      "accuracy": 0.7782127278827872,
+      "precision": 0.7881213449631556,
+      "recall": 0.7782127278827872,
+      "f1_score": 0.7754826599992727
+    },
+    {
+      "Model": "LSTM",
+      "accuracy": 0.7501398053908959,
+      "precision": 0.7708902630011423,
+      "recall": 0.7501398053908959,
+      "f1_score": 0.7392214079364308
+    },
+    {
+      "Model": "Hybrid CNN-LSTM",
+      "accuracy": 0.8063974946873952,
+      "precision": 0.8070410040726036,
+      "recall": 0.8063974946873952,
+      "f1_score": 0.805913620486962
+    }
+  ],
+  "early_warning": {
+    "alert_precision": 0.9366889500589854,
+    "alert_recall": 0.8750918442321822,
+    "alert_f1_score": 0.9048433048433049,
+    "total_true_alerts": 2722,
+    "total_pred_alerts": 2543,
+    "total_samples": 8941,
+    "true_positives": 2382,
+    "false_positives": 161,
+    "false_negatives": 340,
+    "true_negatives": 6058
+  },
+  "ablation_study": [
+    {
+      "step": 1,
+      "feature_group": "base_pollutants",
+      "n_features": 6,
+      "accuracy": 0.7891734705290236,
+      "precision": 0.7941267571928122,
+      "recall": 0.7891734705290236,
+      "f1_score": 0.7887009177724851,
+      "epochs_trained": 23,
+      "best_val_loss": 0.4873431324958801
+    },
+    {
+      "step": 2,
+      "feature_group": "lag_features",
+      "n_features": 42,
+      "accuracy": 0.7827983447041718,
+      "precision": 0.7940067221971315,
+      "recall": 0.7827983447041718,
+      "f1_score": 0.7833858022869572,
+      "epochs_trained": 20,
+      "best_val_loss": 0.5399425625801086
+    },
+    {
+      "step": 3,
+      "feature_group": "rolling_features",
+      "n_features": 66,
+      "accuracy": 0.7983447041717928,
+      "precision": 0.7955550931801684,
+      "recall": 0.7983447041717928,
+      "f1_score": 0.7965821547060631,
+      "epochs_trained": 26,
+      "best_val_loss": 0.520683765411377
+    },
+    {
+      "step": 4,
+      "feature_group": "cyclic_features",
+      "n_features": 74,
+      "accuracy": 0.7388435298065094,
+      "precision": 0.7454536318668895,
+      "recall": 0.7388435298065094,
+      "f1_score": 0.7246186915041731,
+      "epochs_trained": 30,
+      "best_val_loss": 0.5885875225067139
+    },
+    {
+      "step": 5,
+      "feature_group": "ratio_features",
+      "n_features": 77,
+      "accuracy": 0.7940946202885584,
+      "precision": 0.7956651281225613,
+      "recall": 0.7940946202885584,
+      "f1_score": 0.7942830896098979,
+      "epochs_trained": 30,
+      "best_val_loss": 0.5189442038536072
+    },
+    {
+      "step": 6,
+      "feature_group": "meteorological",
+      "n_features": 82,
+      "accuracy": 0.7898445364053238,
+      "precision": 0.7933791886787434,
+      "recall": 0.7898445364053238,
+      "f1_score": 0.7910450523578432,
+      "epochs_trained": 21,
+      "best_val_loss": 0.5335554480552673
+    }
+  ],
+  "meteorological_comparison": [
+    {
+      "Model": "CNN",
+      "Acc (Poll Only)": 0.7587518174700817,
+      "Acc (+ Weather)": 0.7680348954255676,
+      "Acc \u0394": 0.0092830779554858,
+      "F1 (Poll Only)": 0.758006007559424,
+      "F1 (+ Weather)": 0.7700697311125004,
+      "F1 \u0394": 0.0120637235530763
+    },
+    {
+      "Model": "LSTM",
+      "Acc (Poll Only)": 0.7726205122469523,
+      "Acc (+ Weather)": 0.7502516497036126,
+      "Acc \u0394": -0.0223688625433396,
+      "F1 (Poll Only)": 0.771683356669845,
+      "F1 (+ Weather)": 0.7387913620624666,
+      "F1 \u0394": -0.0328919946073783
+    },
+    {
+      "Model": "Hybrid CNN-LSTM",
+      "Acc (Poll Only)": 0.8146739738284309,
+      "Acc (+ Weather)": 0.7850352309585058,
+      "Acc \u0394": -0.029638742869925,
+      "F1 (Poll Only)": 0.8140991670258316,
+      "F1 (+ Weather)": 0.7834470685914537,
+      "F1 \u0394": -0.0306520984343778
+    }
+  ],
+  "training_summary": {
+    "cnn": {
+      "total_epochs": 30,
+      "best_val_loss": 0.5829408764839172,
+      "best_val_accuracy": 0.7782127261161804,
+      "final_train_accuracy": 0.9301167726516724,
+      "final_val_accuracy": 0.7380605936050415
+    },
+    "lstm": {
+      "total_epochs": 24,
+      "best_val_loss": 0.5856583714485168,
+      "best_val_accuracy": 0.7501398324966431,
+      "final_train_accuracy": 0.9086731672286987,
+      "final_val_accuracy": 0.7287775278091431
+    },
+    "hybrid": {
+      "total_epochs": 28,
+      "best_val_loss": 0.5170451402664185,
+      "best_val_accuracy": 0.8063974976539612,
+      "final_train_accuracy": 0.9214531779289246,
+      "final_val_accuracy": 0.7591992020606995
+    }
+  }
+}

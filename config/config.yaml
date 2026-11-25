@@ -1,0 +1,242 @@
+# ============================================================
+# AQI Prediction CNN-LSTM — Master Configuration
+# ============================================================
+
+# --- Project Metadata ---
+project:
+  name: "AQI Prediction using Hybrid CNN-LSTM"
+  version: "1.0.0"
+  authors:
+    - "Sushant Prasad"
+    - "Shivam Verma"
+    - "Harshit Giri"
+    - "Adarsh Raj"
+  institution: "G.L. Bajaj Institute of Technology and Management"
+
+# --- Data Collection ---
+data:
+  # Target city coordinates (Delhi, India)
+  city: "Delhi"
+  latitude: 28.6139
+  longitude: 77.2090
+
+  # Date range for historical data (4 years)
+  start_date: "2022-01-01"
+  end_date: "2025-12-31"
+
+  # Open-Meteo API endpoints (FREE, no API key required)
+  api:
+    air_quality_url: "https://air-quality-api.open-meteo.com/v1/air-quality"
+    weather_url: "https://archive-api.open-meteo.com/v1/archive"
+
+  # Pollutant variables to fetch
+  pollutants:
+    - "pm2_5"
+    - "pm10"
+    - "nitrogen_dioxide"
+    - "sulphur_dioxide"
+    - "carbon_monoxide"
+    - "ozone"
+
+  # Meteorological variables to fetch
+  weather_variables:
+    - "temperature_2m"
+    - "relative_humidity_2m"
+    - "wind_speed_10m"
+    - "surface_pressure"
+    - "dew_point_2m"
+
+  # File paths (relative to project root)
+  raw_pollution_path: "data/raw/pollution_data.csv"
+  raw_weather_path: "data/raw/weather_data.csv"
+  merged_path: "data/processed/merged_data.csv"
+  aqi_path: "data/processed/aqi_data.csv"
+  featured_path: "data/processed/featured_data.csv"
+  sequences_path: "data/processed/sequences.npz"
+
+# --- AQI Calculation (Indian CPCB Standard) ---
+aqi:
+  # Sub-index breakpoints for Indian AQI (CPCB National Ambient Air Quality Standards)
+  # Format: [C_low, C_high, I_low, I_high]
+  breakpoints:
+    pm2_5:
+      - [0, 30, 0, 50]
+      - [31, 60, 51, 100]
+      - [61, 90, 101, 200]
+      - [91, 120, 201, 300]
+      - [121, 250, 301, 400]
+      - [251, 500, 401, 500]
+    pm10:
+      - [0, 50, 0, 50]
+      - [51, 100, 51, 100]
+      - [101, 250, 101, 200]
+      - [251, 350, 201, 300]
+      - [351, 430, 301, 400]
+      - [431, 600, 401, 500]
+    so2:
+      - [0, 40, 0, 50]
+      - [41, 80, 51, 100]
+      - [81, 380, 101, 200]
+      - [381, 800, 201, 300]
+      - [801, 1600, 301, 400]
+      - [1601, 2400, 401, 500]
+    no2:
+      - [0, 40, 0, 50]
+      - [41, 80, 51, 100]
+      - [81, 180, 101, 200]
+      - [181, 280, 201, 300]
+      - [281, 400, 301, 400]
+      - [401, 600, 401, 500]
+    co:
+      - [0, 1, 0, 50]
+      - [1.1, 2, 51, 100]
+      - [2.1, 10, 101, 200]
+      - [10.1, 17, 201, 300]
+      - [17.1, 34, 301, 400]
+      - [34.1, 50, 401, 500]
+    o3:
+      - [0, 50, 0, 50]
+      - [51, 100, 51, 100]
+      - [101, 168, 101, 200]
+      - [169, 208, 201, 300]
+      - [209, 748, 301, 400]
+      - [749, 1000, 401, 500]
+
+  # AQI category labels and thresholds
+  categories:
+    - label: "Good"
+      range: [0, 50]
+      code: 0
+    - label: "Satisfactory"
+      range: [51, 100]
+      code: 1
+    - label: "Moderate"
+      range: [101, 200]
+      code: 2
+    - label: "Poor"
+      range: [201, 300]
+      code: 3
+    - label: "Very Poor"
+      range: [301, 400]
+      code: 4
+    - label: "Severe"
+      range: [401, 500]
+      code: 5
+
+# --- Feature Engineering ---
+features:
+  # Lag features (hours back)
+  lag_hours: [1, 2, 3, 6, 12, 24]
+
+  # Rolling window sizes (hours)
+  rolling_windows: [3, 6, 12, 24]
+
+  # Cyclic encoding period (24 hours for diurnal, 365.25 days for seasonal)
+  cyclic:
+    hour_period: 24
+    day_of_year_period: 365.25
+
+  # Pollutant ratio pairs
+  ratio_pairs:
+    - ["pm2_5", "pm10"]
+    - ["no2", "so2"]
+    - ["co", "o3"]
+
+# --- Sequence Generation ---
+sequence:
+  window_size: 24        # 24-hour lookback window
+  forecast_horizon: 1    # Predict 1 step ahead
+
+# --- Train/Test Split ---
+split:
+  test_size: 0.30        # 30% test as per synopsis
+  random_state: 42
+  shuffle: false          # Time series — no shuffle
+
+# --- Model Architectures ---
+models:
+  cnn:
+    filters: [64, 128]
+    kernel_size: 3
+    pool_size: 2
+    dense_units: 128
+    dropout_rate: 0.3
+    num_classes: 6
+
+  lstm:
+    units: [128, 64]
+    dropout_rate: 0.3
+    recurrent_dropout: 0.2
+    dense_units: 128
+    num_classes: 6
+
+  cnn_lstm:
+    # CNN component
+    cnn_filters: [64, 128]
+    cnn_kernel_size: 3
+    cnn_pool_size: 2
+    # LSTM component
+    lstm_units: [128, 64]
+    lstm_dropout: 0.3
+    recurrent_dropout: 0.2
+    # Dense head
+    dense_units: 128
+    dropout_rate: 0.3
+    num_classes: 6
+
+# --- Training ---
+training:
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: "adam"
+
+  # Early stopping
+  early_stopping:
+    monitor: "val_loss"
+    patience: 15
+    restore_best_weights: true
+
+  # Model checkpoint
+  checkpoint:
+    monitor: "val_loss"
+    save_best_only: true
+
+# --- Evaluation ---
+evaluation:
+  # Metrics to compute
+  metrics:
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "accuracy"
+    - "confusion_matrix"
+
+# --- Early Warning ---
+early_warning:
+  # Alert thresholds (category codes that trigger alerts)
+  alert_categories: [4, 5]   # "Very Poor" and "Severe"
+  alert_labels: ["Very Poor", "Severe"]
+
+# --- Ablation Study ---
+ablation:
+  # Feature groups to test incrementally
+  feature_groups:
+    - name: "base_pollutants"
+      description: "Raw pollutant concentrations only"
+    - name: "lag_features"
+      description: "+ Lagged pollutant values"
+    - name: "rolling_features"
+      description: "+ Rolling window averages"
+    - name: "cyclic_features"
+      description: "+ Cyclic temporal encodings"
+    - name: "ratio_features"
+      description: "+ Pollutant ratio features"
+    - name: "meteorological"
+      description: "+ Weather variables (temp, humidity, wind, pressure)"
+
+# --- Paths ---
+paths:
+  models_dir: "models"
+  results_dir: "results"
+  artifacts_dir: "artifacts"
